@@ -11,12 +11,39 @@ export class AppController {
     return this.appService.getTotalSupply();
   }
 
-  @Get('eth-balance/:address')
-  getEthBalance(@Param('address') address: string) {
-    console.log("API: app.controller.ts address: " + address);
-    
-    console.log("API: app.controller.ts ethBalance: " + this.appService.getEthBalance(address));
-    
-    return this.appService.getEthBalance(address);
+  @Get('index-value')
+  getIndexValue() {
+    return this.appService.getIndexValue();
   }
+
+  @Get('wbtc-usd-price')
+  getWbtcUsdPrice() {
+    return this.appService.getWbtcUsdPrice();
+  }
+
+  @Get('eth-usd-price')
+  getEthUsdPrice() {
+    return this.appService.getEthUsdPrice();
+  }
+
+  // @Get('eth-balance/:address')
+  // getEthBalance(@Param('address') address: string) {
+  //   console.log("API: app.controller.ts address: " + address);
+    
+  //   //console.log("API: app.controller.ts ethBalance: " + this.appService.getEthBalance(address));
+    
+  //   return this.appService.getEthBalance(address);
+  // }
+
+  @Get('dip-balance/:address')
+  getDipBalance(@Param("address") address: string) {   
+    return this.appService.getDipBalance(address);
+  }
+
+  @Get('allowance')
+  getAllowance(@Query("from") from: string, @Query("to") to: string) {
+    return this.appService.getAllowance(from, to);
+  }
+
+
 }

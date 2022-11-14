@@ -10,8 +10,8 @@ async function bootstrap() {
     preflightContinue: false,
     optionsSuccessStatus: 204,
     credentials: true,
-    allowHeaders: 'Content-Type, Accept, Authorization',
-  }
+    allowedHeaders: 'Content-Type, Accept, Authorization',
+  };
   app.enableCors(corsOptions);
   const config = new DocumentBuilder()
   .setTitle('Cats example')
