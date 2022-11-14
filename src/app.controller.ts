@@ -26,6 +26,21 @@ export class AppController {
     return this.appService.getEthUsdPrice();
   }
 
+  @Get('weth-on-contract')
+  getwethOnContract() {
+    return this.appService.getWethOnContract();
+  }
+
+  @Get('aweth-on-contract')
+  getAwethOnContract() {
+    return this.appService.getAwethOnContract();
+  }
+
+  @Get('awbtc-on-contract')
+  getAwbtcOnContract() {
+    return this.appService.getAwbtcOnContract();
+  }
+
   // @Get('eth-balance/:address')
   // getEthBalance(@Param('address') address: string) {
   //   console.log("API: app.controller.ts address: " + address);

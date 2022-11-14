@@ -51,8 +51,25 @@ export class AppService {
     return wbtcUsdPrice;
   }
 
-  async getWbtcWeight() {
-    
+  async getWethOnContract() {
+    const wethOnContractBN = await this.indexContract.wethOnContract();
+    const wethOnContract = ethers.utils.formatEther(wethOnContractBN);
+    console.log("weth on contract in ETH: " + wethOnContract);
+    return wethOnContract;
+  }
+
+  async getAwethOnContract() {
+    const aWethOnContractBN = await this.indexContract.aWethOnContract();
+    const aWethOnContract = ethers.utils.formatEther(aWethOnContractBN);
+    console.log("aWeth on contract in ETH: " + aWethOnContract);
+    return aWethOnContract;
+  }
+
+  async getAwbtcOnContract() {
+    const aWbtcOnContractBN = await this.indexContract.aWbtcOnContract();
+    const aWbtcOnContract = ethers.utils.formatUnits(aWbtcOnContractBN, 8);
+    console.log("aWbtc on contract in ETH: " + aWbtcOnContract);
+    return aWbtcOnContract;
   }
 
   async getEthUsdPrice() {
